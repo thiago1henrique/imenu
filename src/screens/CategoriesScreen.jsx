@@ -6,7 +6,8 @@ const CategoriesScreen = ({ navigation }) => {
 
     function  renderCategoryItem(itemData) {
         const pressHandler = () => navigation.navigate("Meals Overview", {
-            categoryId: itemData.item.id
+            categoryId: itemData.item.id,
+
         });
 
         return <CategoryGridTile title={itemData.item.title}

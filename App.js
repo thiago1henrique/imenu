@@ -21,26 +21,29 @@ export default function App() {
     <>
       <StatusBar barStyle="light-content" />
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Meals Categories">
+            <Stack.Navigator screenOptions={{
+                headerTitleAlign: "center",
+                headerTitleStyle: {
+                    fontFamily: "ampleSoftPro-bold",
+                },
+                headerStyle: {
+                    backgroundColor: "#351401"
+                },
+                contentStyle: {
+                    backgroundColor: "#3f2f25",
+                },
+                headerTintColor: "white",
+            }} initialRouteName="Meals Categories">
+
                 <Stack.Screen name="Meals Categories"
                               component={CategoriesScreen}
                               options={{
                                   title: "Cardápio",
-                                  headerTitleAlign: "center",
-                                  headerTitleStyle: {
-                                      fontFamily: "ampleSoftPro-bold",
-                                  }
                               }}/>
 
                 <Stack.Screen name="Meals Overview"
                               component={MealsOverviewScreen}
-                              options={{
-                                  title: "Descrição",
-                                  headerTitleAlign: "center",
-                                  headerTitleStyle: {
-                                      fontFamily: "ampleSoftPro-bold",
-                                  }
-                              }}/>
+                              />
             </Stack.Navigator>
         </NavigationContainer>
     </>
