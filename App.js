@@ -21,7 +21,7 @@ export default function App() {
     <>
       <StatusBar barStyle="light-content" />
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator initialRouteName="Meals Categories">
                 <Stack.Screen name="Meals Categories"
                               component={CategoriesScreen}
                               options={{
