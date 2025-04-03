@@ -1,23 +1,37 @@
 import {Image, Pressable, Text, View, StyleSheet, Platform} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-const MealItem = ({ title, imageUrl, duration, complexity, affordability }) => (
-    <View style={mealItem}>
-        <Pressable android_ripple={{color: '#ccc'}} style={({ pressed }) =>
-            pressed ? buttonPressed : null }>
-            <View style={innerContainer}>
-                <View>
-                    <Image style={image} source={{uri: imageUrl}} />
-                    <Text style={titleCustom}>{title}</Text>
+const MealItem = ({ id, title, imageUrl, duration, complexity, affordability }) => {
+    const navigation = useNavigation();
+
+    const selectMealItem = () => {
+        navigation.navigate('Meals Details', {
+            mealId: id
+        });
+    }
+
+    return (
+        <View style={mealItem}>
+            <Pressable android_ripple={{color: '#ccc'}} onPress={selectMealItem}>
+                <View style={innerContainer}>
+                    <View>
+                        <Image style={image} source={{uri: imageUrl}}/>
+                        <Text style={titleCustom}>{title}</Text>
+                    </View>
+                    <View style={details}>
+                        <Text style={detailItem}>{duration}m</Text>
+                        <Text style={detailItem}>{complexity.toUpperCase()}</Text>
+                        <Text style={detailItem}>{affordability.toUpperCase()}</Text>
+                    </View>
                 </View>
-                <View style={details}>
-                    <Text style={detailItem}>{duration}m</Text>
-                    <Text style={detailItem}>{complexity.toUpperCase()}</Text>
-                    <Text style={detailItem}>{affordability.toUpperCase()}</Text>
-                </View>
-            </View>
-        </Pressable>
-    </View>
-)
+            </Pressable>
+        </View>
+    )
+}
+
+
+
+
 
 const { image, titleCustom, mealItem, details, detailItem, innerContainer} = StyleSheet.create({
     mealItem: {

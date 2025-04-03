@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { useFonts } from "expo-font"
 import AppLoading from "expo-app-loading";
 import MealsOverviewScreen from "./src/screens/MealsOverviewScreen";
+import MealDetailScreen from "./src/screens/MealDetailScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -44,6 +45,10 @@ export default function App() {
                 <Stack.Screen name="Meals Overview"
                               component={MealsOverviewScreen}
                               />
+
+                <Stack.Screen name="Meals Details"
+                              component={MealDetailScreen}
+                />
             </Stack.Navigator>
         </NavigationContainer>
     </>
