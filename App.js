@@ -34,8 +34,16 @@ export default function App() {
                 },
                 headerTintColor: "white",
             }} initialRouteName="Meals Categories">
-                <Stack.Screen name="Meals Categories" component={CategoriesScreen}/>
-                <Stack.Screen name="Meals Overview" component={MealsOverviewScreen}/>
+
+                <Stack.Screen name="Meals Categories"
+                              component={CategoriesScreen}
+                              options={{
+                                  title: "Cardápio",
+                              }}/>
+
+                <Stack.Screen name="Meals Overview"
+                              component={MealsOverviewScreen}
+                              />
             </Stack.Navigator>
         </NavigationContainer>
     </>
