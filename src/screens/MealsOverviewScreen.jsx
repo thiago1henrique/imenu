@@ -18,8 +18,6 @@ const MealsOverviewScreen = ({ route, navigation }) => {
         return mealItem.categoryIds.indexOf(catId) >= 0;
     })
 
-
-
     const renderMealItem = (itemData) => {
         const item = itemData.item;
         const mealItemProps = {
