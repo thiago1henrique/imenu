@@ -1,5 +1,5 @@
 import { MEALS, CATEGORIES } from '../../data/dummy-data'
-import {FlatList, View, StyleSheet, Text} from "react-native";
+import { FlatList, View, StyleSheet } from "react-native";
 import MealItem from "../../components/MealItem";
 import { useLayoutEffect } from "react";
 
@@ -17,6 +17,8 @@ const MealsOverviewScreen = ({ route, navigation }) => {
     const displayMeals = MEALS.filter((mealItem) => {
         return mealItem.categoryIds.indexOf(catId) >= 0;
     })
+
+
 
     const renderMealItem = (itemData) => {
         const item = itemData.item;
